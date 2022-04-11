@@ -3,8 +3,8 @@ import twitterLogo from './assets/twitter-logo.svg';
 import React from "react";
 
 // Constants
-const TWITTER_HANDLE = '_seunbayoNg';
-const TWITTER_LINK = `https://twitter.com/${seunbayoNg}`;
+const TWITTER_HANDLE = '_buildspace';
+const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 const OPENSEA_LINK = '';
 const TOTAL_MINT_COUNT = 50;
 
@@ -30,10 +30,10 @@ const App = () => {
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
           <a
             className="footer-text"
-            href={https://twitter.com/seunbayong}
+            href={TWITTER_LINK}
             target="_blank"
             rel="noreferrer"
-          >{`built on @${seunbayoNg}`}</a>
+          >{`built on @${TWITTER_HANDLE}`}</a>
         </div>
       </div>
     </div>
