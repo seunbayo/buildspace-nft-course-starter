@@ -36,6 +36,7 @@ const App = () => {
       const account = accounts[0];
       console.log("Found an authorized account:", account);
       setCurrentAccount(account);
+
     } else {
       console.log("No authorized account found");
     }
@@ -50,16 +51,19 @@ const App = () => {
         alert("Get MetaMask!");
         return;
       }
+
       // Fancy method to request access to account.
       const accounts = await ethereum.request({ method: "eth_requestAccounts" });
       /*
       * Boom! This should print out public address once we authorize Metamask.
       */
+
       console.log("Connected", accounts[0]);
       setCurrentAccount(accounts[0]);
     } catch (error) {
       console.log(error);
     }
+  };
 
     const askContractToMintNft = async () => {
       const CONTRACT_ADDRESS = "0x640333C9ACBe1723ef53baa273627A9bb410eF9b";
@@ -126,11 +130,10 @@ const App = () => {
           {currentAccount === "" ? (
             renderNotConnectedContainer()
           ) : (
-              {/* <button onClick={null} className="cta-button connect-wallet-button">
+              {<button onClick={null} className="cta-button connect-wallet-button">
                 Mint NFT
-              </button> */}
-              < button onClick={askContractToMintNft} className="cta-button connect-wallet-button" >   Mint NFT
-              </button >
+              </button>}
+
             )}
         </div>
         <div className="footer-container">
