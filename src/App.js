@@ -114,9 +114,10 @@ const App = () => {
     checkIfWalletIsConnected();
   }, [])
 
-  /*
-  * Added a conditional render! We don't want to show Connect to Wallet if we're already connected :).
-  */
+const renderNotConnectedContainer = () => (
+  <button onClick={connectWallet} className="cta-button connect-wallet-button">Mint NFT
+  </button>
+);
 
 
   return (
@@ -128,13 +129,7 @@ const App = () => {
             Each unique. Each beautiful. Discover your NFT today.
           </p>
           {currentAccount === "" ? (
-            renderNotConnectedContainer()
-          ) : (
-              {<button onClick={null} className="cta-button connect-wallet-button">
-                Mint NFT
-              </button>}
-
-            )}
+            renderNotConnectedContainer() : renderMintUI()}
         </div>
         <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
